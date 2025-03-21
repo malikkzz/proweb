@@ -20,28 +20,6 @@ function ProdukList() {
       .catch(err => console.error(err));
   };
 
-<<<<<<< HEAD
-=======
-  const handleEdit = (item) => {
-    setEditData(item);
-    setIsModalOpen(true);
-  };
-
-  const handleChange = (e) => {
-    setEditData({ ...editData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.put(`http://localhost:3001/produk/${editData.id}`, editData)
-      .then(() => {
-        setProduk(produk.map(p => (p.id === editData.id ? editData : p)));
-        setIsModalOpen(false);
-      })
-      .catch(err => console.error(err));
-  };
-
->>>>>>> a44c2f3 (Malik)
   return (
     <div>
       <h2>Daftar Produk</h2>
@@ -49,10 +27,6 @@ function ProdukList() {
         {produk.map((item) => (
           <li key={item.id}>
             {item.nama} - Rp{item.harga}
-<<<<<<< HEAD
-=======
-            <button onClick={() => handleEdit(item)}>Edit</button>
->>>>>>> a44c2f3 (Malik)
             <button onClick={() => handleDelete(item.id)}>Delete</button>
           </li>
         ))}

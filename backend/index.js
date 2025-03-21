@@ -45,12 +45,6 @@ app.get('/produk', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server berjalan di http://localhost:${PORT}`);
 });
-<<<<<<< HEAD
-
-=======
-    
-// index.js
->>>>>>> a44c2f3 (Malik)
 app.put('/produk/:id', async (req, res) => {
     const { id } = req.params;
     const { nama, harga } = req.body;
@@ -75,9 +69,5 @@ app.put('/produk/:id', async (req, res) => {
       console.error(err);
       res.status(500).json({ error: 'Server error' });
     }
-<<<<<<< HEAD
   });
     
-=======
-  });
->>>>>>> a44c2f3 (Malik)
