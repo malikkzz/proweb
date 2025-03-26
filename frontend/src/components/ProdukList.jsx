@@ -74,7 +74,7 @@ function ProdukList({ produk, setProduk }) {
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Edit Produk</h5>
+                <h5 className="modal-title">✏️ Edit Produk</h5>
                 <button type="button" className="btn-close" onClick={() => setIsModalOpen(false)}></button>
               </div>
               <div className="modal-body">

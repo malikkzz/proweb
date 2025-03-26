@@ -1,7 +1,8 @@
 /* === Styling Umum === */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 body {
-  background-color: #ADD8E6; /* Gray */
-  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #B2DFDB, #64B5F6); /* Soft Aqua Blue */
+  font-family: 'Ubuntu', sans-serif;
   color: #333;
   margin: 0;
   padding: 0;
@@ -10,97 +11,116 @@ body {
 /* === Styling Card === */
 .card {
   border-radius: 12px;
-  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
-  background-color: #C0C0C0; /* Silver */
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #FFFFFF, #E0E0E0);
   color: #333;
   padding: 20px;
   margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: none;
 }
 
 /* === Styling Form Input === */
 .form-control {
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 12px;
-  border: 1px solid #000080; /* Navy Blue */
+  border: 1px solid #2E7D32; /* Emerald Green */
   background-color: #FFF;
   color: #333;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.form-control:focus {
+  border-color: #1B5E20;
+  box-shadow: 0px 0px 8px rgba(27, 94, 32, 0.5);
 }
 
 /* === Styling Tombol === */
 .btn {
-  border-radius: 8px;
-  padding: 10px 15px;
+  border-radius: 10px;
+  padding: 12px 18px;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-family: 'Ubuntu', sans-serif;
 }
 
+/* Tombol Utama */
 .btn-primary {
-  background-color: #2E8B57; /* Navy Blue */
+  background: linear-gradient(135deg, #008080, #004D40); /* Teal */
   border: none;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #000066;
+  background: linear-gradient(135deg, #004D40, #002F2F);
+  transform: scale(1.05);
 }
 
+/* Tombol Edit */
 .btn-warning {
-  background-color: #CCCCCC; /* Gray */
+  background: linear-gradient(135deg, #FFD700, #FFA500);
   border: none;
-  color: black;
+  color: white !important;
 }
 
 .btn-warning:hover {
-  background-color: #B2B2B2;
+  background: linear-gradient(135deg, #FFA500, #FF8C00);
+  color: white !important;
+  transform: scale(1.05);
 }
 
+/* Tombol Hapus */
 .btn-danger {
-  background-color: #8B0000;
+  background: linear-gradient(135deg, #D32F2F, #B71C1C);
   border: none;
+  color: white;
 }
 
 .btn-danger:hover {
-  background-color: #660000;
+  background: linear-gradient(135deg, #B71C1C, #7F0000);
+  transform: scale(1.05);
 }
 
 /* === Styling Tabel === */
 .table {
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
-  background-color: #C0C0C0; /* Silver */
+  background: #FFFFFF;
   color: #333;
-}
-
-.table-hover tbody tr:hover {
-  background-color: #BEBEBE;
-  transition: 0.3s;
+  border-collapse: collapse;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 thead {
-  background-color: #000080; /* Navy Blue */
+  background: linear-gradient(135deg, #004D40, #00796B);
   color: white;
 }
 
 td, th {
   text-align: center;
-  padding: 15px;
+  padding: 12px;
+  border-bottom: 1px solid #DDDDDD;
 }
 
-/* === Notifikasi Pop-up === */
-.notif {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background: #000080;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  font-size: 16px;
-  animation: fadeOut 3s forwards;
+tr:nth-child(even) {
+  background-color: #F2F2F2;
 }
+
+.table-hover tbody tr:hover {
+  background-color: #E0F7FA;
+  transition: 0.3s;
+}
+
 
 @keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
 }
+
