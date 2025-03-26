@@ -2,41 +2,34 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TambahProduk from './components/TambahProduk';
 import ProdukList from './components/ProdukList';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-    const [produk, setProduk] = useState([]);
-    const [notif, setNotif] = useState(""); // ⬅️ State untuk menyimpan notifikasi
+  const [produk, setProduk] = useState([]);
 
-    // Ambil data produk saat halaman dimuat
-    useEffect(() => {
-        axios.get('http://localhost:3001/produk')
-            .then((response) => setProduk(response.data))
-            .catch((error) => console.error(error));
-    }, []);
+  useEffect(() => {
+    axios.get('http://localhost:3001/produk')
+      .then((response) => setProduk(response.data))
+      .catch((error) => console.error(error));
+  }, []);
 
-    // Fungsi untuk menampilkan notifikasi dan menghilangkannya setelah 3 detik
-    const tampilkanNotif = (pesan) => {
-        setNotif(pesan);
-        setTimeout(() => setNotif(""), 3000); // Notifikasi hilang setelah 3 detik
-    };
+  const handleProdukDitambahkan = (produkBaru) => {
+    setProduk([...produk, produkBaru]);
+  };
 
-    // Fungsi untuk menambahkan produk tanpa refresh
-    const tambahProdukKeList = (produkBaru) => {
-        setProduk([...produk, produkBaru]);
-        tampilkanNotif("✅ Produk Berhasil Ditambahkan!");
-    };
-
-    return (
-        <div>
-            <h1>Aplikasi E-Commerce Sederhana</h1>
-
-            {/* Notifikasi Pop-up */}
-            {notif && <div className="notif">{notif}</div>}
-
-            <TambahProduk onProdukDitambahkan={tambahProdukKeList} />
-            <ProdukList produk={produk} setProduk={setProduk} tampilkanNotif={tampilkanNotif} />
+  return (
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">TokoMapan</h1>
+      <div className="row">
+        <div className="col-md-6">
+          <TambahProduk onProdukDitambahkan={handleProdukDitambahkan} />
         </div>
-    );
+        <div className="col-md-6">
+          <ProdukList produk={produk} setProduk={setProduk} />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default App;

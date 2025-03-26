@@ -1,64 +1,97 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* === Styling Umum === */
 body {
+  background-color: #ADD8E6; /* Gray */
+  font-family: 'Poppins', sans-serif;
+  color: #333;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* === Styling Card === */
+.card {
+  border-radius: 12px;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.2);
+  background-color: #C0C0C0; /* Silver */
+  color: #333;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-button {
+/* === Styling Form Input === */
+.form-control {
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #000080; /* Navy Blue */
+  background-color: #FFF;
+  color: #333;
+}
+
+/* === Styling Tombol === */
+.btn {
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  padding: 10px 15px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
 }
 
+.btn-primary {
+  background-color: #2E8B57; /* Navy Blue */
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #000066;
+}
+
+.btn-warning {
+  background-color: #CCCCCC; /* Gray */
+  border: none;
+  color: black;
+}
+
+.btn-warning:hover {
+  background-color: #B2B2B2;
+}
+
+.btn-danger {
+  background-color: #8B0000;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #660000;
+}
+
+/* === Styling Tabel === */
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #C0C0C0; /* Silver */
+  color: #333;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #BEBEBE;
+  transition: 0.3s;
+}
+
+thead {
+  background-color: #000080; /* Navy Blue */
+  color: white;
+}
+
+td, th {
+  text-align: center;
+  padding: 15px;
+}
+
+/* === Notifikasi Pop-up === */
 .notif {
   position: fixed;
   top: 10px;
   right: 10px;
-  background: #4CAF50;
+  background: #000080;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -66,20 +99,6 @@ button:focus-visible {
   font-size: 16px;
   animation: fadeOut 3s forwards;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 
 @keyframes fadeOut {
   0% { opacity: 1; }
