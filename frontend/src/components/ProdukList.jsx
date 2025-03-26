@@ -13,9 +13,15 @@ function ProdukList() {
   }, []);
 
   const handleDelete = (id) => {
+    const confirmDelete = window.confirm("Apakah Anda yakin ingin menghapus produk ini?");
+    if (!confirmDelete) {
+      return; // Jika pengguna memilih "Batal", hentikan proses penghapusan
+    }
+
     axios.delete(`http://localhost:3001/produk/${id}`)
       .then(() => {
         setProduk(produk.filter((p) => p.id !== id));
+        alert("Produk telah dihapus"); // Notifikasi setelah berhasil dihapus
       })
       .catch(err => console.error(err));
   };
@@ -35,6 +41,7 @@ function ProdukList() {
       .then((response) => {
         setProduk(produk.map((item) => (item.id === editData.id ? response.data : item)));
         setIsModalOpen(false);
+        alert("Produk Berhasil Diperbarui"); // Notifikasi setelah update
       })
       .catch(err => console.error(err));
   };
